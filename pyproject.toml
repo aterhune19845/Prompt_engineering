@@ -1,0 +1,19 @@
+[project]
+name = "claude-summary-agent"
+version = "0.1.0"
+description = "A simple Claude-powered CLI agent that summarizes text files as structured JSON."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "anthropic>=0.40.0",
+]
+
+[project.scripts]
+claude-summary = "claude_summary_agent.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
