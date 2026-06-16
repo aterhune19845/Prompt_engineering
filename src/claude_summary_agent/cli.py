@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 
-DEFAULT_MODEL = "claude-haiku-4-5"
+DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 
 
 PROMPT = """Summarize this text file as JSON.
@@ -61,9 +61,9 @@ def summarize_text(text, model=DEFAULT_MODEL, client=None):
 
         from anthropic import Anthropic
 
-        client = Anthropic().messages
+        client = Anthropic()
 
-    response = client.create(
+    response = client.messages.create(
         model=model,
         max_tokens=1000,
         temperature=0,
